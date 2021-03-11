@@ -104,7 +104,7 @@ La versión de la librería spinnaker de python deben corresponder a la versión
 
 * simple-pyspin
 <p>
-    Para poder usar esta libreria es necesario haber realizado todos los anteriores pasos, ya que simple-pyspin es una libreria que trabaja sobre PySpin y facilita su uso. Para su intalación ejecutar:
+    Para poder usar esta libreria es necesario haber realizado todos los anteriores pasos, ya que simple-pyspin es una libreria que trabaja sobre PySpin y facilita su uso. Para su instalación ejecutar:
 <p>
 
 ```
