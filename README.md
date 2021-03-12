@@ -111,7 +111,7 @@ La versión de la librería spinnaker de python deben corresponder a la versión
     pip install simple-pyspin
 ```
 <p>
-    <b>Ejemplo:</b>
+    <b>Ejemplo 1:</b>
     En este ejemplo se muestra como capturar y visualizar una imagen usando opencv y simple_pyspin
 </p>
 
@@ -129,6 +129,37 @@ cv2.destroyAllWindows()
 cam.stop() # detener stream
 cam.close() # es recomendable limpiar todo 
 ```
+
+<p>
+    <b>Ejemplo 2:</b> Adquirir video rgb
+</p>
+
+```python
+from simple_pyspin import Camera
+import cv2
+
+
+with Camera() as cam: # Initialize Camera
+    # If this is a color camera, get the image in RGB format.
+    if 'Bayer' in cam.PixelFormat:
+        cam.PixelFormat = "RGB8"
+
+    cam.init() 
+    cam.start() 
+
+    print("start video")
+    while True:
+        # capturar frame a frame
+        frame = cam.get_array()
+        cv2.imshow("frame", frame) 
+        if cv2.waitKey(1) == ord('q'): #presionamos la tecla Q para cerrar la ventanas
+            break
+
+    cam.stop()
+    cv2.destroyAllWindows()
+    print("stop video")
+```
+
 <p>
     Para más información visitar: <a href="https://klecknerlab.github.io/simple_pyspin/">simple_pyspi</a>
 </p>
